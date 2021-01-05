@@ -64,6 +64,8 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      docker
+     ;;
+     sql
      ;; treemacs
      )
 
@@ -527,6 +529,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (add-to-list 'auto-mode-alist '("\\.hql\\'" . sql-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
