@@ -531,6 +531,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (add-to-list 'auto-mode-alist '("\\.hql\\'" . sql-mode))
+  (add-to-list 'auto-mode-alist '("\\.dyn\\'" . json-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
