@@ -95,6 +95,7 @@ plugins=(
 	gnu-utils
 	docker-compose
 	poetry
+	ruby
 	#zsh-interactive-cd
 )
 source $ZSH/oh-my-zsh.sh
@@ -144,3 +145,6 @@ if [ -f '/home/sergio/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# export ruby path
+PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
