@@ -15,8 +15,8 @@ export ZSH="/home/sergio/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -90,13 +90,12 @@ plugins=(
         python
         sudo
         vagrant
-	vim-interaction
-	python
-	gnu-utils
-	docker-compose
-	poetry
-	ruby
-	#zsh-interactive-cd
+	      vim-interaction
+	      python
+	      gnu-utils
+	      docker-compose
+	      poetry
+	      ruby
 )
 source $ZSH/oh-my-zsh.sh
 
