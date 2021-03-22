@@ -147,3 +147,9 @@ if [ -f '/home/sergio/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # export ruby path
 PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
+# added by Snowflake SnowSQL installer
+# export PATH=/home/sergio/bin:$PATH
+# aws cli
+autoload bashcompinit && bashcompinit
+complete -C '/usr/bin/aws_completer' aws
