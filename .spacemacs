@@ -499,7 +499,16 @@ It should only modify the values of Spacemacs settings."
 
    ;; If nil the home buffer shows the full path of agenda items
    ;; and todos. If non nil only the file name is shown.
-   dotspacemacs-home-shorten-agenda-source nil))
+   dotspacemacs-home-shorten-agenda-source nil
+
+   ;; This activates your pipenv before enabling the lsp backend
+   python-poetry-activate t
+
+   ;; If you want imports to be automatically sorted when you save a
+   ;; file (using isort), set the python-sort-imports-on-save
+   ;; variable in the python layer config section:
+   dotspacemacs-configuration-layers '((python :variables python-sort-imports-on-save t))
+   ))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -533,6 +542,7 @@ before packages are loaded."
 
   (add-to-list 'auto-mode-alist '("\\.hql\\'" . sql-mode))
   (add-to-list 'auto-mode-alist '("\\.dyn\\'" . json-mode))
+  (add-to-list 'spacemacs--python-pipenv-mode 'spacemacs--python-poetry-modes)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
