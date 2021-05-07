@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      lsp
      ;; Prog lang
      python
+     sphinx
      rust
      ;; Latex layers
      latex
@@ -64,6 +65,8 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     ;; shell-scripts
+     yaml
      docker
      ;;
      sql
@@ -508,6 +511,7 @@ It should only modify the values of Spacemacs settings."
    ;; file (using isort), set the python-sort-imports-on-save
    ;; variable in the python layer config section:
    dotspacemacs-configuration-layers '((python :variables python-sort-imports-on-save t))
+   dotspacemacs-configuration-layers '((shell :variables shell-default-shell 'eshell))
    ))
 
 (defun dotspacemacs/user-env ()
