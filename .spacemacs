@@ -546,7 +546,14 @@ before packages are loaded."
 
   (add-to-list 'auto-mode-alist '("\\.hql\\'" . sql-mode))
   (add-to-list 'auto-mode-alist '("\\.dyn\\'" . json-mode))
-  (add-to-list 'spacemacs--python-pipenv-mode 'spacemacs--python-poetry-modes)
+
+  (add-hook 'python-mode-hook (lambda ()
+                                (flycheck-mode 1)
+                                (semantic-mode 1)
+                                (setq flycheck-checker 'python-pylint
+                                      flycheck-checker-error-threshold 900
+                                      flycheck-pylintrc "~/.pylintrc")))
+  ;; (add-to-list 'spacemacs--python-poetry-modes)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -569,6 +576,8 @@ This function is called at the very end of Spacemacs initialization."
      (output-dvi "xdvi")
      (output-pdf "Okular")
      (output-html "xdg-open")))
+ '(evil-want-Y-yank-to-eol nil)
+ '(fill-column 100)
  '(flycheck-sql-sqlint-executable "~/.gem/ruby/2.7.0/bin/sqlint")
  '(package-selected-packages
    '(toml-mode ron-mode racer helm-gtags ggtags flycheck-rust dap-mode lsp-treemacs bui treemacs cfrs pfuture posframe counsel-gtags counsel swiper ivy cargo rust-mode yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key vterm volatile-highlights vi-tilde-fringe valign uuidgen use-package undo-tree toc-org terminal-here symon symbol-overlay string-inflection sphinx-doc spaceline-all-the-icons smeargle shell-pop restart-emacs rainbow-delimiters pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer org-superstar open-junk-file neotree nameless multi-term move-text magit-svn magit-section magit-gitflow macrostep lsp-ui lsp-python-ms lsp-pyright lsp-origami lsp-latex lorem-ipsum live-py-mode link-hint indent-guide importmagic hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ fuzzy forge font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr elisp-slime-nav editorconfig dumb-jump dotenv-mode dired-quick-sort diminish devdocs define-word cython-mode company-reftex company-auctex company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode browse-at-remote blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
