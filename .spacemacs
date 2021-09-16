@@ -43,8 +43,11 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      helm
      lsp
+     (terraform :variables terraform-backend 'lsp)
      ;; Prog lang
-     python
+     ;; python
+     (python :variables
+             python-backend 'lsp python-lsp-server 'pylsp)
      sphinx
      rust
      ;; Latex layers
@@ -510,8 +513,8 @@ It should only modify the values of Spacemacs settings."
    ;; If you want imports to be automatically sorted when you save a
    ;; file (using isort), set the python-sort-imports-on-save
    ;; variable in the python layer config section:
-   dotspacemacs-configuration-layers '((python :variables python-sort-imports-on-save t))
-   dotspacemacs-configuration-layers '((shell :variables shell-default-shell 'eshell))
+   ;; dotspacemacs-configuration-layers '((python :variables python-sort-imports-on-save t))
+   ;; dotspacemacs-configuration-layers '((shell :variables shell-default-shell 'eshell))
    ))
 
 (defun dotspacemacs/user-env ()
@@ -552,7 +555,8 @@ before packages are loaded."
                                 (semantic-mode 1)
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-checker-error-threshold 900
-                                      flycheck-pylintrc "~/.pylintrc")))
+                                        ;flycheck-pylintrc "~/.pylintrc"
+                                      )))
   ;; (add-to-list 'spacemacs--python-poetry-modes)
   )
 
