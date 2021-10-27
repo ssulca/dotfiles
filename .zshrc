@@ -90,12 +90,14 @@ plugins=(
         python
         sudo
         vagrant
-	      vim-interaction
-	      python
-	      gnu-utils
-	      docker-compose
-	      poetry
-	      ruby
+ 	vim-interaction
+	python
+	gnu-utils
+	docker-compose
+	poetry
+	ruby
+	kubectl
+	helm
 )
 source $ZSH/oh-my-zsh.sh
 
