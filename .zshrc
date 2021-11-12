@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/sergio/.oh-my-zsh"
+export ZSH="/home/naranja/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,6 +80,7 @@ plugins=(
         history-substring-search
         colored-man-pages
         git
+	zsh-syntax-highlighting
         zsh-autosuggestions
         virtualenv
         docker
@@ -127,7 +128,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-zstyle :cominstall filename '/home/sergio/.zshrc'
+zstyle :cominstall filename '/home/naranja/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -139,10 +140,10 @@ compinit
 #
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/sergio/Programs/google-cloud-sdk/path.zsh.inc' ]; then . '/home/sergio/Programs/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/naranja/Programs/google-cloud-sdk/path.zsh.inc' ]; then . '/home/naranja/Programs/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/sergio/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sergio/Programs/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/naranja/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/naranja/Programs/google-cloud-sdk/completion.zsh.inc'; fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
