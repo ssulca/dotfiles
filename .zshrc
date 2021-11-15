@@ -86,7 +86,7 @@ plugins=(
     git
     gitfast
     git-auto-fetch
-    git-flo
+    git-flow
     zsh-syntax-highlighting
     zsh-autosuggestions
     virtualenv
