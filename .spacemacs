@@ -45,20 +45,23 @@ This function should only modify configuration layer settings."
      lsp
      (terraform :variables terraform-backend 'lsp)
      ;; Prog lang
-     ;; python
      (python :variables
              python-backend 'lsp python-lsp-server 'pylsp)
      sphinx
      rust
-     ;; Latex layers
-     latex
-     bibtex
+     sql
+     ;; shell-scripts
+     yaml
+     docker
      ;; Git
      version-control
      git
      ;; Text
      markdown
      org
+     ;; Latex layers
+     latex
+     bibtex
      ;; Spacemacs
      emacs-lisp
      neotree
@@ -68,11 +71,6 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     ;; shell-scripts
-     yaml
-     docker
-     ;;
-     sql
      ;; treemacs
      )
 
