@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
      latex
      bibtex
      ;; Spacemacs
+     spacemacs-evil
      emacs-lisp
      neotree
      multiple-cursors
