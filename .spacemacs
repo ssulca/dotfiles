@@ -62,7 +62,7 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     ;; version-control
+     version-control
      ;; files
      (markdown :variables markdown-mmm-auto-modes '("c" "c++" "python" "scala" ("elisp" "emacs-lisp")))
      (yaml :variables yaml-enable-lsp t)
