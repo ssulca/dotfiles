@@ -1,19 +1,32 @@
 # Qtile
 
-![Qtile](../../.screenshots/qtile.png)
 
-***Language***
-- [🇪🇸 Español](./README.es.md)
-- 🇺🇸 English
+![Qtile](http://www.qtile.org/static/img/screenshots/default.png)
 
 ## Installation (Arch based)
 
-Install Qtile and dependencies:
-
-```
-sudo pacman -S qtile pacman-contrib
+- Install Qtile and dependencies:
+- [iwd](https://wiki.archlinux.org/title/Iwd)
+```sh
+sudo pacman -S qtile pacman-contrib iwd
 yay -S nerd-fonts-ubuntu-mono
 pip install psutil
+```
+- Program launcher (like dmenu or rofi):
+```sh
+sudo pacman -S rofi
+```
+- Wallpaper
+```sh
+sudo pacman -S feh
+```
+- Brightness
+```sh
+sudo pacman -S brightnessctl redshift
+```
+- Screen
+```sh
+sudo pacman -S xorg-xrandr
 ```
 
 Clone this repository and copy my configs:
