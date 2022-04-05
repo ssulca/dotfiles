@@ -30,7 +30,7 @@ sudo systemctl start tlp
 ### Fonts, theming and GTK
 
 ```sh
-sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
+sudo pacman -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji noto-fonts-extra
 ```
 ### Apps
 - [Slack](https://snapcraft.io/slack)
