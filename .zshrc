@@ -17,6 +17,9 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+
+[[ ! -f ~/.zprofile ]] || source ~/.zprofile
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -95,6 +98,7 @@ plugins=(
     mvn
     pip
     python
+    pyenv
     sudo
     vim-interaction
     python
@@ -160,3 +164,4 @@ complete -C '/usr/bin/aws_completer' aws
 
 # -*- k3d completion for zsh -*-
 [[ ! -f ~/.zsh/k3d.zsh ]] || source ~/.zsh/k3d.zsh
+
