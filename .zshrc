@@ -165,3 +165,5 @@ complete -C '/usr/bin/aws_completer' aws
 # -*- k3d completion for zsh -*-
 [[ ! -f ~/.zsh/k3d.zsh ]] || source ~/.zsh/k3d.zsh
 
+# -*- pyenv command completion for zsh -*-
+[[ ! -f ~/.zsh/pyenv.zsh ]] || source ~/.zsh/pyenv.zsh
