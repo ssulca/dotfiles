@@ -1,8 +1,8 @@
 # Dotfiles & Configs
 
 ## Table of Contents
+- [Tiline Manager](tiling-manager)
 - [Software](#software)
-
 
 ## Tiling Manager
 - [Qtile](.config/qtile/README.md)
@@ -28,10 +28,27 @@ sudo systemctl start tlp
 ```
 
 ### Fonts, theming and GTK
-
+- Fonts
 ```sh
 sudo pacman -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji noto-fonts-extra
 ```
+
+- Zsh
+```sh
+sudo pacman -S zsh
+```
+
+- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
+```sh
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp .zshrc ~/.zshrc
+```
+
+- Zsh Plugins
+  - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
 ### Apps
 - [Slack](https://snapcraft.io/slack)
 
