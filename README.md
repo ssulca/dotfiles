@@ -48,6 +48,7 @@ cp .zshrc ~/.zshrc
 - Zsh Plugins
   - [zsh-completions](https://github.com/zsh-users/zsh-completions)
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ### Apps
 - [Slack](https://snapcraft.io/slack)
@@ -79,4 +80,6 @@ sudo pacman -S docker docker-compose
 yay -S hadolint
 # kubernetes
 sudo pacman -S helm kubectl
+# k3d
+yay -S rancher-k3d-bin
 ```
