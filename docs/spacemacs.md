@@ -1,6 +1,9 @@
 # Spacemacs
 
-![spacemacs](https://www.spacemacs.org/img/logo.svg)
+<p style="text-align: center;">
+<img src=https://www.spacemacs.org/img/logo.svg width=60%>
+</p>
+
 ## Emacs
 ```sh
 sudo pacman -S emacs
@@ -18,3 +21,4 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 - [Python](https://develop.spacemacs.org/layers/+lang/python/README.html)
 - [Docker](https://develop.spacemacs.org/layers/+tools/docker/README.html)
 - [Sql](https://develop.spacemacs.org/layers/+lang/sql/README.html)
+- [shell](https://develop.spacemacs.org/layers/+lang/shell-scripts/README.html)
