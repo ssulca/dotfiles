@@ -1,7 +1,7 @@
 # Spacemacs
 
 <p style="text-align: center;">
-<img src=https://www.spacemacs.org/img/logo.svg width=60%>
+<img src=https://www.spacemacs.org/img/logo.svg width=50%>
 </p>
 
 ## Emacs

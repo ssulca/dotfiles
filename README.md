@@ -1,7 +1,7 @@
 # Dotfiles & Configs
 
 ## Table of Contents
-- [Tiline Manager](tiling-manager)
+- [Tiling Manager](#tiling-manager)
 - [Software](#software)
 
 ## Tiling Manager
