@@ -38,37 +38,51 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
-     themes-megapack
-     ;; better-defaults
-     emacs-lisp
-     neotree
-     (git :variables
-          git-enable-magit-delta-plugin t
-          git-enable-magit-gitflow-plugin t)
-     lsp
-     multiple-cursors
+
      ;; spacemacs distribution
+     auto-completion
+     better-defaults
+     emacs-lisp
+     common-lisp
+     lsp
      helm
      spacemacs-completion
      spacemacs-layouts
-     spacemacs-evil
      spacemacs-editing
      spacemacs-editing-visual
-     treemacs
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     spacemacs-evil
+     spacemacs-language
+     spacemacs-misc
+     spacemacs-modeline
+     spacemacs-navigation
+     spacemacs-org
+     spacemacs-purpose
+     spacemacs-visual
      spell-checking
      syntax-checking
+     languagetool
+     ;; version control
      version-control
+     (git :variables
+          git-enable-magit-delta-plugin t
+          git-enable-magit-gitflow-plugin t)
+     ;; gui
+     themes-megapack
+     neotree
+     multiple-cursors
+     treemacs
+     tabs
      ;; files
+     html
      (markdown :variables markdown-mmm-auto-modes '("c" "c++" "python" "scala" ("elisp" "emacs-lisp")))
      (yaml :variables yaml-enable-lsp t)
      (json :variables
            json-fmt-tool 'web-beautify
            json-backend 'lsp)
+     ;; org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      ;; languages
      bibtex
      (latex :variables latex-backend 'lsp)
@@ -77,14 +91,17 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest
              python-formatter 'black
              python-fill-column 99)
-     (docker :variables docker-dockerfile-backend 'lsp)
-     kubernetes
      (sql :variables
           sql-backend 'lsp
           sql-lsp-sqls-workspace-config-path 'workspace
-          sql-capitalize-keywords t
+          ;; sql-capitalize-keywords t
           sql-capitalize-keywords-blacklist '("name" "varchar"))
      (shell-scripts :variables shell-scripts-backend 'lsp)
+     ;; virtualization
+     kubernetes
+     (docker :variables
+             docker-dockerfile-backend 'lsp
+             shell-scripts-format-on-save t)
      )
 
 
@@ -618,9 +635,10 @@ This function is called at the very end of Spacemacs initialization."
      (output-dvi "xdvi")
      (output-pdf "Okular")
      (output-html "xdg-open")))
+ '(evil-want-Y-yank-to-eol nil)
  '(evil-want-keybinding nil)
  '(package-selected-packages
-   '(ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil treemacs cfrs pfuture posframe toc-org symon symbol-overlay string-inflection string-edit spaceline-all-the-icons memoize spaceline powerline restart-emacs request rainbow-delimiters quickrun popwin persp-mode password-generator paradox spinner overseer org-superstar open-junk-file nameless multi-line shut-up macrostep lorem-ipsum link-hint inspector info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl flycheck-elsa flx-ido flx fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-terminal-cursor-changer evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection annalist evil-cleverparens smartparens evil-args evil-anzu anzu eval-sexp-fu emr iedit clang-format projectile paredit list-utils elisp-slime-nav elisp-def f editorconfig dumb-jump s drag-stuff dired-quick-sort devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol ht dash auto-compile packed all-the-icons aggressive-indent ace-window ace-link ace-jump-helm-line helm avy popup helm-core which-key use-package pcre2el hydra lv hybrid-mode font-lock+ evil goto-chg dotenv-mode diminish bind-map bind-key async)))
+   '(web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css counsel swiper ivy company-web web-completion-data add-node-modules-path ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil treemacs cfrs pfuture posframe toc-org symon symbol-overlay string-inflection string-edit spaceline-all-the-icons memoize spaceline powerline restart-emacs request rainbow-delimiters quickrun popwin persp-mode password-generator paradox spinner overseer org-superstar open-junk-file nameless multi-line shut-up macrostep lorem-ipsum link-hint inspector info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl flycheck-elsa flx-ido flx fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-terminal-cursor-changer evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection annalist evil-cleverparens smartparens evil-args evil-anzu anzu eval-sexp-fu emr iedit clang-format projectile paredit list-utils elisp-slime-nav elisp-def f editorconfig dumb-jump s drag-stuff dired-quick-sort devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol ht dash auto-compile packed all-the-icons aggressive-indent ace-window ace-link ace-jump-helm-line helm avy popup helm-core which-key use-package pcre2el hydra lv hybrid-mode font-lock+ evil goto-chg dotenv-mode diminish bind-map bind-key async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
