@@ -47,6 +47,7 @@ cp .zshrc ~/.zshrc
 
 - Zsh Plugins
   - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
