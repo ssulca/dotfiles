@@ -38,7 +38,6 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-
      ;; spacemacs distribution
      auto-completion
      better-defaults
@@ -46,8 +45,8 @@ This function should only modify configuration layer settings."
      common-lisp
      lsp
      helm
-     ansible
-     nginx
+     ;; ansible
+     ;; nginx
      spacemacs-completion
      spacemacs-layouts
      spacemacs-editing
@@ -58,13 +57,13 @@ This function should only modify configuration layer settings."
      spacemacs-modeline
      spacemacs-navigation
      spacemacs-org
-     spacemacs-purpose
+     ;; spacemacs-purpose
      spacemacs-visual
      spell-checking
      syntax-checking
      languagetool
      web-beautify
-     ;; version control
+     ;; -- version control --
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
@@ -76,13 +75,14 @@ This function should only modify configuration layer settings."
      ;; gui
      themes-megapack
      neotree
-     multiple-cursors
+     ;; multiple-cursors
      (treemacs :variables
                treemacs-use-follow-mode 'tag
                treemacs-use-filewatch-mode t
                treemacs-use-all-the-icons-theme t)
-     tabs
-     ;; files
+     ;; tabs
+
+     ;; -- files --
      html
      (markdown :variables
                markdown-live-preview-engine 'vmd
@@ -92,8 +92,8 @@ This function should only modify configuration layer settings."
            json-fmt-tool 'web-beautify
            json-backend 'lsp
            json-fmt-on-save t)
-     org
-     ;; languages
+     ;; org
+     ;; -- languages --
      rust
      bibtex
      latex
@@ -110,11 +110,12 @@ This function should only modify configuration layer settings."
           sql-capitalize-keywords t
           sql-capitalize-keywords-blacklist '("name" "varchar"))
      (shell-scripts :variables shell-scripts-backend 'lsp)
-     ;; virtualization
-     kubernetes
+     ;; -- virtualization --
+     ;; kubernetes
      (docker :variables
              docker-dockerfile-backend 'lsp
              shell-scripts-format-on-save t)
+
      )
 
 
@@ -241,6 +242,13 @@ It should only modify the values of Spacemacs settings."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
+
+   ;; Scale factor controls the scaling (size) of the startup banner. Default
+   ;; value is `auto' for scaling the logo automatically to fit all buffer
+   ;; contents, to a maximum of the full image height and a minimum of 3 line
+   ;; heights. If set to a number (int or float) it is used as a constant
+   ;; scaling factor for the default logo size.
+   dotspacemacs-startup-banner-scale 'auto
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
@@ -414,12 +422,12 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
-   ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   ;; (default t) (Emacs 24.4+ only)
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
-   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
-   ;; borderless fullscreen. (default nil)
+   ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
+   ;; without external boxes. Also disables the internal border. (default nil)
    dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
@@ -431,6 +439,11 @@ It should only modify the values of Spacemacs settings."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+
+   ;; A value from the range (0..100), in increasing opacity, which describes the
+   ;; transparency level of a frame background when it's active or selected. Transparency
+   ;; can be toggled through `toggle-background-transparency'. (default 90)
+   dotspacemacs-background-transparency 90
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
@@ -471,12 +484,12 @@ It should only modify the values of Spacemacs settings."
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
    dotspacemacs-line-numbers '(:visual nil
-                               :disabled-for-modes
-                               dired-mode
-                               doc-view-mode
-                               pdf-view-mode
-                               :size-limit-kb 1000)
-
+                                       :disabled-for-modes
+                                       dired-mode
+                                       doc-view-mode
+                                       pdf-view-mode
+                                       :size-limit-kb 1000)
+ 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -546,7 +559,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil - same as frame-title-format)
    dotspacemacs-icon-title-format nil
 
-   ;; Show trailing whitespace (default t)
+   ;; Color highlight trailing whitespace in all prog-mode and text-mode derived
+   ;; modes such as c++-mode, python-mode, emacs-lisp, html-mode, rst-mode etc.
+   ;; (default t)
    dotspacemacs-show-trailing-whitespace t
 
    ;; Delete whitespace while saving buffer. Possible values are `all'
@@ -604,8 +619,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-
-  (setq-default git-magit-status-fullscreen t)
 )
 
 
@@ -623,10 +636,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq magit-repository-directories
-        '(("~/Develop/" . 2)))
-
- )
+)
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -648,19 +658,11 @@ This function is called at the very end of Spacemacs initialization."
       "dvips and gv")
      (output-dvi "xdvi")
      (output-pdf "Okular")
-     (output-html "xdg-open")))
- '(evil-want-Y-yank-to-eol nil)
- '(evil-want-keybinding nil)
- '(flycheck-sql-sqlint-executable "/home/mutt/.local/share/gem/ruby/3.0.0/bin/sqlint")
- '(package-selected-packages
-   '(jinja2-mode company-ansible ansible-doc ansible nginx-mode toml-mode ron-mode racer rust-mode helm-gtags ggtags flycheck-rust counsel-gtags cargo web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode counsel-css counsel swiper ivy company-web web-completion-data add-node-modules-path ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil treemacs cfrs pfuture posframe toc-org symon symbol-overlay string-inflection string-edit spaceline-all-the-icons memoize spaceline powerline restart-emacs request rainbow-delimiters quickrun popwin persp-mode password-generator paradox spinner overseer org-superstar open-junk-file nameless multi-line shut-up macrostep lorem-ipsum link-hint inspector info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl flycheck-elsa flx-ido flx fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-terminal-cursor-changer evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection annalist evil-cleverparens smartparens evil-args evil-anzu anzu eval-sexp-fu emr iedit clang-format projectile paredit list-utils elisp-slime-nav elisp-def f editorconfig dumb-jump s drag-stuff dired-quick-sort devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol ht dash auto-compile packed all-the-icons aggressive-indent ace-window ace-link ace-jump-helm-line helm avy popup helm-core which-key use-package pcre2el hydra lv hybrid-mode font-lock+ evil goto-chg dotenv-mode diminish bind-map bind-key async))
- '(sql-linter-program "sqlint")
- '(sql-use-indent-support nil)
- '(tab-width 4))
+     (output-html "xdg-open"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
+ '(default ((t (:background nil)))))
 )
