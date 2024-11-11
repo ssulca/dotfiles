@@ -11,11 +11,12 @@
 ### Basic utilities
 ```sh
 # build essentials
-sudo pacman -S git vim make automake cmake
+sudo pacman -S git vim make automake cmake fakeroot patch
 
 # package manager
-sudo pacman -S yay snapd npm stack
-sudo systemctl enable snapd
+sudo pacman -S yay snapd npm
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
 sudo systemctl start snapd
 ```
 
@@ -53,6 +54,7 @@ cp .zshrc ~/.zshrc
 
 ### Apps
 - [Slack](https://snapcraft.io/slack)
+- [Code](https://snapcraft.io/code)
 
 ```sh
 sudo pacman -S alacritty ruby go
@@ -60,10 +62,8 @@ sudo pacman -S alacritty ruby go
 - [Spacemacs](docs/spacemacs.md)
 - Python
 ```sh
-# pip
-sudo pacman -S python-pip pyenv
-# pipx
-pip install pipx
+# pip and pipx
+sudo pacman -S pyenv python-pip python-pipx
 # pipx packages
 pipx install poetry pre-commit
 ```
