@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    ubuntu # os: archlinux, ubuntu
+    archlinux # os: archlinux, ubuntu
     cp
     emacs
     aws
@@ -105,7 +105,7 @@ plugins=(
     gnu-utils
     poetry
     ruby
-    kubectl
+    # kubectl
     helm
     # tmux
     # vagrant

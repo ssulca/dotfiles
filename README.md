@@ -57,6 +57,7 @@ cp .zshrc ~/.zshrc
 - [Code](https://snapcraft.io/code)
 - [Spotify](https://snapcraft.io/spotify)
 
+
 ```sh
 sudo pacman -S alacritty ruby go
 ```
