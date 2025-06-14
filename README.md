@@ -55,6 +55,7 @@ cp .zshrc ~/.zshrc
 ### Apps
 - [Slack](https://snapcraft.io/slack)
 - [Code](https://snapcraft.io/code)
+- [Spotify](https://snapcraft.io/spotify)
 
 ```sh
 sudo pacman -S alacritty ruby go
