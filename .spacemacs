@@ -108,6 +108,9 @@ This function should only modify configuration layer settings."
      (docker :variables
              docker-dockerfile-backend 'lsp
              shell-scripts-format-on-save t)
+     (terraform :variables
+                terraform-auto-format-on-save t
+                terraform-backend 'lsp)
      )
 
 
