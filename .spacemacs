@@ -45,8 +45,7 @@ This function should only modify configuration layer settings."
      common-lisp
      lsp
      helm
-     ;; ansible
-     ;; nginx
+     multiple-cursors
      spacemacs-completion
      spacemacs-layouts
      spacemacs-editing
@@ -55,14 +54,9 @@ This function should only modify configuration layer settings."
      spacemacs-language
      spacemacs-misc
      spacemacs-modeline
-     ;; spacemacs-navigation
-     spacemacs-org
-     ;; spacemacs-purpose
      spacemacs-visual
      spell-checking
      syntax-checking
-     ;; languagetool
-     ;; web-beautify
      ;; -- version control --
      (shell :variables
             shell-default-height 30
@@ -81,9 +75,8 @@ This function should only modify configuration layer settings."
                treemacs-use-filewatch-mode t
                treemacs-use-all-the-icons-theme t)
      ;; tabs
-
-     ;; -- files --
      ;; html
+     toml
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-mmm-auto-modes '("c" "c++" "python" "scala" ("elisp" "emacs-lisp")))
@@ -105,8 +98,8 @@ This function should only modify configuration layer settings."
              python-fill-column 99)
      (sql :variables
           sql-auto-indent nil
-          sql-backend 'lsp
-          sql-lsp-sqls-workspace-config-path 'workspace
+          ;; sql-backend 'lsp
+          ;; sql-lsp-sqls-workspace-config-path 'workspace
           sql-capitalize-keywords nil
           sql-capitalize-keywords-blacklist '("name" "varchar"))
      (shell-scripts :variables shell-scripts-backend 'lsp)
@@ -115,7 +108,9 @@ This function should only modify configuration layer settings."
      (docker :variables
              docker-dockerfile-backend 'lsp
              shell-scripts-format-on-save t)
-
+     (terraform :variables
+                terraform-auto-format-on-save t
+                terraform-backend 'lsp)
      )
 
 
